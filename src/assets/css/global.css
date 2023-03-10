@@ -1,1 +1,42 @@
 /* declare all global properties here */
+
+/* Styles for headers */
+.h1 {
+    font-size: 56px;
+    line-height: 68px;
+}
+.h2 {
+    font-size: 48px;
+    line-height: 52px;
+}
+.h3 {
+    font-size: 40px;
+    line-height: 44px;
+}
+.h4 {
+    font-size: 32px;
+    line-height: 36px;
+}
+.h5 {
+    font-size: 24px;
+    line-height: 28px;
+}
+.h6 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+/* Styles for paragraphs and body */
+
+.body {
+    font-size: 20px;
+    line-height: 32px;
+}
+.caption {
+    font-size: 16px;
+    line-height: 24px;
+}
+.overline {
+    font-size: 12px;
+    line-height: 16px;
+}
