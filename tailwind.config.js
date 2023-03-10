@@ -10,7 +10,8 @@ module.exports = {
       'black': '#1E1717',
       'white': '#F8F4F4',
       'error': '#FA0724',
-      'success': '#01A830'
+      'success': '#01A830',
+      'lblue': '#E6F0FF'
     },
     extend: {},
   },
