@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      adelia: ["ArticulatCF-700", "san-serif"],
+    },
     colors : {
       'primary': {
         50 : '#E6F0FF',
@@ -46,7 +49,8 @@ module.exports = {
       'error': '#FA0724',
       'success': '#01A830'
     },
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 }
