@@ -11,7 +11,7 @@ module.exports = {
       'white': '#F8F4F4',
       'error': '#FA0724',
       'success': '#01A830',
-      'lblue': '#E6F0FF'
+      'lblue': '#E6F0FF',
     },
     extend: {},
   },
