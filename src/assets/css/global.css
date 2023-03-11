@@ -1,1 +1,71 @@
 /* declare all global properties here */
+
+/* Styles for headers */
+.h1 {
+    font-size: 56px;
+    line-height: 68px;
+}
+.h2 {
+    font-size: 48px;
+    line-height: 52px;
+}
+.h3 {
+    font-size: 40px;
+    line-height: 44px;
+}
+.h4 {
+    font-size: 32px;
+    line-height: 36px;
+}
+.h5 {
+    font-size: 24px;
+    line-height: 28px;
+}
+.h6 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+/* Styles for paragraphs and body */
+
+.body {
+    font-size: 20px;
+    line-height: 32px;
+}
+.caption {
+    font-size: 16px;
+    line-height: 24px;
+}
+.overline {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+/* Font family */
+@font-face {
+    font-family: "ArticulatCF-500";   /*Can be any text*/
+    src: local("ArticulatCF"),
+      url("./../fonts/airticulat/ArticulatCF-Bold.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "ArticulatCF-700";   /*Can be any text*/
+    src: local("ArticulatCF"),
+      url("./../fonts/airticulat/ArticulatCF-Heavy.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Rubrik-300";   /*Can be any text*/
+    src: local("Rubrik-Semibold"),
+      url("./../fonts/rubrik/Rubrik-Semibold.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Rubrik-400";   /*Can be any text*/
+    src: local("Rubrik"),
+      url("./../fonts/rubrik/Rubrik-Semibold.ttf") format("truetype");
+    font-weight: 400;
+}
