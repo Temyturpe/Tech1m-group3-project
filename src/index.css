@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "ArticulatCF-500";   /*Can be any text*/
+    src: local("ArticulatCF"),
+      url("./../fonts/airticulat/ArticulatCF-Bold.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "ArticulatCF-700";   /*Can be any text*/
+    src: local("ArticulatCF"),
+      url("./../fonts/airticulat/ArticulatCF-Heavy.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Rubrik-300";   /*Can be any text*/
+    src: local("Rubrik-Semibold"),
+      url("./../fonts/rubrik/Rubrik-Semibold.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Rubrik-400";   /*Can be any text*/
+    src: local("Rubrik"),
+      url("./../fonts/rubrik/Rubrik-Semibold.ttf") format("truetype");
+    font-weight: 400;
+}
