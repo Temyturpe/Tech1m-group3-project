@@ -38,10 +38,13 @@ module.exports = {
         900 : '#091E42'
       },
       'black': '#1E1717',
+      'green': '#01A830',
+      'red': '#FA0724',
       'white': {
         0 : '#FFFFFF',
         10 : '#FAFBFB',
         20 : '#F5F6F7',
+        30 : '#FFFEFE'
       },
       'error': '#FA0724',
       'success': '#01A830'
