@@ -1,10 +1,9 @@
 import logo from './../../assets/images/logos/white.png';
-import './../assets/images/background_images/page2.jpg';
 
-export default function Course() {
-    return (
-        <div>
-        
-        </div>
-    )
-}
+export const Homerecipedata = [
+    {
+        id: 1,
+       picture: logo,
+// add other details and replicate but change the id.
+    }
+]
