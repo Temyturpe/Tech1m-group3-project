@@ -1,0 +1,283 @@
+{
+    "courses" : [
+         {
+            "id" : 1,
+            "name" : "User Experience Design: Figma UI/UX Design",
+            "dateCreated" : "January 2023",
+            "timeCreated" : "5:40pm",
+            "price" : "$2000",
+            "level" : "Beginner",
+            "duration" : "6 weeks",
+            "modules" : 42,
+            "image" : "./assets/images/course_card_images/appdev-card-img.jpg"
+          },
+          {
+            "id" : 2,
+            "name" : "App Development Fundamentals",
+            "dateCreated" : "January 2023",
+            "timeCreated" : "5:40pm",
+            "price" : "$800",
+            "level" : "Beginner",
+            "duration" : "6 weeks",
+            "modules" : 42,
+            "image" : "./assets/images/course_card_images/uiux-card-img.jpg"
+          },
+          {
+            "id" : 3,
+            "name" : "User Experience Design: Figma UI/UX Design",
+            "dateCreated" : "January 2023",
+            "timeCreated" : "5:40pm",
+            "price" : "$600",
+            "level" : "Intermediate",
+            "duration" : "6 weeks",
+            "modules" : 42,
+            "image" : "./assets/images/course_card_images/uiux-card-img.jpg"
+          },
+          {
+            "id" : 4,
+            "name" : "User Experience Design: Figma UI/UX Design",
+            "dateCreated" : "January 2023",
+            "timeCreated" : "5:40pm",
+            "price" : "$800",
+            "level" : "Beginner",
+            "duration" : "6 weeks",
+            "modules" : 42,
+            "image" : "./assets/images/course_card_images/uiux-card-img.jpg"
+          },
+          {
+            "id" : 5,
+            "name" : "Programming with Python",
+            "dateCreated" : "January 2023",
+            "timeCreated" : "5:40pm",
+            "price" : "$1000",
+            "level" : "Advanced",
+            "duration" : "6 weeks",
+            "modules" : 42,
+            "image" : "./assets/images/course_card_images/appdev-card-img.jpg"
+          },
+          {
+            "id" : 6,
+            "name" : "User Experience Design: Figma UI/UX Design",
+            "dateCreated" : "January 2023",
+            "timeCreated" : "5:40pm",
+            "price" : "$1000",
+            "level" : "Beginner",
+            "duration" : "6 weeks",
+            "modules" : 42,
+            "image" : "./assets/images/course_card_images/uiux-card-img.jpg"
+         }
+    ],
+
+    "students" : [
+        {
+            "id" : 1,
+            "name" : "Alabi Samuel",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Accepted",
+                "price" : "$500"
+            },
+            "level" : "Intermediate",
+            "guardianContact" : "+23456868752",
+            "schoolName" : "Pep Academy",
+            "invoiceNum" : 3743242,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/member1.jpg"
+        },
+        {
+            "id" : 2,
+            "name" : "Ololade Samuel",
+            "courseInfo" : {
+                "title" : "App Development Fundamentals",
+                "status" : "Accepted",
+                "price" : "$800"
+            },
+            "level" : "Beginner",
+            "guardianContact" : "+2145434552",
+            "schoolName" : "Aston Academy",
+            "invoiceNum" : 4734242,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/member2.jpg"
+        },
+        {
+            "id" : 3,
+            "name" : "Arnold Ahmed",
+            "courseInfo" : {
+                "title" : "Web Development Fundamentals",
+                "status" : "Pending",
+                "price" : "$500"
+            },
+            "level" : "Beginner",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "LASU Academy",
+            "invoiceNum" : 3748949842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/member3.jpg"
+        },
+        {
+            "id" : 4,
+            "name" : "Bola Tinubu",
+            "courseInfo" : {
+                "title" : "Web Development Fundamentals",
+                "status" : "Approved",
+                "price" : "$1000"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+8934823752",
+            "schoolName" : "Tech1m Academy",
+            "invoiceNum" : 43228342,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/member3.jpg"
+        },
+        {
+            "id" : 5,
+            "name" : "Rufai Salisu",
+            "courseInfo" : {
+                "title" : "App Development Fundamentals",
+                "status" : "Approved",
+                "price" : "$800"
+            },
+            "level" : "Beginner",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "Nowa Academy",
+            "invoiceNum" : 9830287,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/member4.jpg"
+        },
+        {
+            "id" : 6,
+            "name" : "Peter Obi",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Approved",
+                "price" : "$500"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "British Academy",
+            "invoiceNum" : 3748949842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/member5.jpg"
+        },
+        {
+            "id" : 7,
+            "name" : "Ahmed Obi",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Approved",
+                "price" : "$500"
+            },
+            "level" : "Beginner",
+            "guardianContact" : "+94838352",
+            "schoolName" : "Lagos High School",
+            "invoiceNum" : 899999997,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/member6.jpg"
+        },
+        {
+            "id" : 8,
+            "name" : "Samuel Olaiya",
+            "courseInfo" : {
+                "title" : "App Development Fundamentals",
+                "status" : "Approved",
+                "price" : "$800"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+34545344352",
+            "schoolName" : "King's Academy",
+            "invoiceNum" : 323149842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/student1.jpg"
+        },
+        {
+            "id" : 9,
+            "name" : "Peter Obi",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Approved",
+                "price" : "$500"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "British Academy",
+            "invoiceNum" : 3748949842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/student2.jpg"
+        },
+        {
+            "id" : 10,
+            "name" : "Peter Obi",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Approved",
+                "price" : "$500"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "British Academy",
+            "invoiceNum" : 3748949842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/student3.jpg"
+        },
+        {
+            "id" : 11,
+            "name" : "Peter Obi",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Approved",
+                "price" : "$500"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "British Academy",
+            "invoiceNum" : 3748949842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/student4.jpg"
+        },
+        {
+            "id" : 12,
+            "name" : "Peter Obi",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Approved",
+                "price" : "$500"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "British Academy",
+            "invoiceNum" : 3748949842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/student5.jpg"
+        },
+        {
+            "id" : 13,
+            "name" : "Peter Obi",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Approved",
+                "price" : "$500"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "British Academy",
+            "invoiceNum" : 3748949842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/student6.jpg"
+        },
+        {
+            "id" : 14,
+            "name" : "Peter Obi",
+            "courseInfo" : {
+                "title" : "User Experience Design: Figma UI/UX Design",
+                "status" : "Approved",
+                "price" : "$500"
+            },
+            "level" : "Advanced",
+            "guardianContact" : "+23895383752",
+            "schoolName" : "British Academy",
+            "invoiceNum" : 3748949842,
+            "payment" : "Completed",
+            "avatar" : "./assets/images/avatars/student2.jpg"
+        }
+    ]
+}
