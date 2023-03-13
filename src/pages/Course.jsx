@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import Arrowup from '../assets/icons/arrow-up-1.svg';
 import Dollar from '../assets/icons/dollar-square.svg';
 import Status from '../assets/icons/status-up.svg';
@@ -11,16 +9,8 @@ import Webdev from '../assets/images/course_card_images/webdev-card-img.jpg';
 import Uiux from '../assets/images/course_card_images/uiux-card-img.jpg';
 
 const Course = () => {
-  const routes = [
-    { path: '/', breadcrumb: 'Home' },
-    { path: '/courses', breadcrumb: 'Courses' },
-    { path: '/students', breadcrumb: 'Students' },
-    { path: '/payments', breadcrumb: 'Payments' },
-    { path: '/quiz', breadcrumb: 'Quiz' },
-    { path: '/messages', breadcrumb: 'Messages' },
-];
-  const breadcrumbs = useBreadcrumbs(routes);
-  const location = useLocation();
+
+  //To do: Create another js file later to store the data and import it into any file that needs it
   const courseData =  [
     {
       id: 1,
@@ -129,11 +119,9 @@ const Course = () => {
             <div className="left w-[20%]"></div>
             <div className="right w-[80%] flex flex-col justify-center text-2xl mt-8 font-semibold ">
               <div className='flex justify-between mt-4 mb-4 w-[75%] ml-20'>
-                <nav className='max-w-fit'>
-                  {breadcrumbs.map(({ match, breadcrumb }) => (
-                    <Link key={match.url} to={match.url} className={match.pathname === location.pathname ? "text-primary-500 text-sm" : "text-primary-75 text-sm "}>{breadcrumb} /</Link>
-                  ))}
-                </nav> 
+                <div className='max-w-fit'>
+                  <p className='text-primary-75 text-[16px]'>Home/<span className='text-primary-500 text-[16px]'>Courses</span></p>
+                </div> 
                 <div className='flex justify-evenly space-x-4 p-2 bg-white-10'>
                   <div className='flex justify-between cursor-pointer items-center space-x-2'>
                     <p className='text-sm text-primary-500'>COURSE</p>
