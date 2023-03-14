@@ -146,13 +146,13 @@ const Payment = () => {
 
   
   return (
-    <div className='w-full'>
+    <div className='w-full mt-24'>
     <div className="content w-full flex">
         <div className="left w-[20%]"></div>
-        <div className="right w-[80%] text-2xl font-semibold ">
-              <div className='flex justify-between mt-4 mb-4 w-[75%] ml-20'>
+        <div className="right w-[80%] text-2xl font-semibold px-14">
+              <div className='flex justify-between items-center my-5 '>
                 <div className='max-w-fit'>
-                  <p className='text-primary-75 text-[16px]'>Home/<span className='text-primary-500 text-[16px]'>Courses</span></p>
+                  <p className='text-primary-75 text-[16px]'>Home/<span className='text-primary-500 text-[16px]'>Payments</span></p>
                 </div> 
                 <div className='flex justify-evenly space-x-4 p-2 bg-white-10'>
                   <div className='flex justify-between cursor-pointer items-center space-x-2'>
@@ -163,21 +163,21 @@ const Payment = () => {
                     </div>
                   </div>
                   <div className='flex justify-between items-center cursor-pointer space-x-2'>
-                    <p className='text-sm text-neutral-50'>LEVEL</p>
+                    <p className='text-sm text-neutral-50'>AMOUNT</p>
                     <div className='flex flex-col justify-center items-center'>
                       <img src={Arrowup} className='w-3 h-3' alt='' />
                       <img src={Arrowdown} className='w-3 h-3' alt='' />
                     </div>
                   </div>
                   <div className='flex justify-between cursor-pointer items-center space-x-2'>
-                    <p className='text-sm text-neutral-50'>DURATION</p>
+                    <p className='text-sm text-neutral-50'>DATE</p>
                     <div className='flex flex-col justify-center items-center'>
                       <img src={Arrowup} className='w-3 h-3' alt='' />
                       <img src={Arrowdown} className='w-3 h-3' alt='' />
                     </div>
                   </div>
                   <div className='flex justify-between items-center cursor-pointer space-x-2'>
-                    <p className='text-sm text-neutral-50'>ALL</p>
+                    <p className='text-sm text-neutral-50'>STATUS</p>
                     <div className='flex flex-col justify-center items-center'>
                       <img src={Arrowup} className='w-3 h-3' alt='' />
                       <img src={Arrowdown} className='w-3 h-3' alt='' />
@@ -189,7 +189,7 @@ const Payment = () => {
                   <div className=''>
                     { data.map(info => {
                       return (
-                        <div className='flex h-fit items-center p-3 w-[75%] ml-20 bg-white-20 mb-4'>
+                        <div className='flex shadow-sm items-center p-3 bg-white-20 mb-4'>
                           <div className='flex items-center w-full'>
                             <div className='w-[76px] h-[72px]'>
                               <img src={info.img} className='w-full h-full rounded-[4px] object-cover' alt='' />

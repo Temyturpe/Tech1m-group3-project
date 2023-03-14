@@ -4,9 +4,6 @@ import Dollar from '../assets/icons/dollar-square.svg';
 import Status from '../assets/icons/status-up.svg';
 import Clock from '../assets/icons/clock.svg';
 import Arrowdown from '../assets/icons/arrow-down.svg';
-import Appdev from '../assets/images/course_card_images/appdev-card-img.jpg';
-import Webdev from '../assets/images/course_card_images/webdev-card-img.jpg';
-import Uiux from '../assets/images/course_card_images/uiux-card-img.jpg';
 
 const Course = () => {
 
@@ -114,11 +111,11 @@ const Course = () => {
   ]
 
   return (
-    <div className='w-full'>
+    <div className='w-full mt-20'>
         <div className="content w-full flex">
             <div className="left w-[20%]"></div>
-            <div className="right w-[80%] flex flex-col justify-center text-2xl mt-8 font-semibold ">
-              <div className='flex justify-between mt-4 mb-4 w-[75%] ml-20'>
+            <div className="right w-[80%] flex flex-col justify-center mt-8 ">
+              <div className='flex justify-between my-5 px-14'>
                 <div className='max-w-fit'>
                   <p className='text-primary-75 text-[16px]'>Home/<span className='text-primary-500 text-[16px]'>Courses</span></p>
                 </div> 
@@ -153,14 +150,14 @@ const Course = () => {
                   </div>
                 </div>
               </div>
-              <div className='w-[80%] ml-20 grid grid-cols-3 grid-rows-2 gap-y-3 gap-x-[40px] '>
+              <div className='my-5 px-14 grid grid-cols-3 grid-rows-2 gap-6 '>
                 {courseData.map((course) => {
                   return (
                     <div className='w-[284px] bg-white self-start rounded-lg cursor-pointer h-[334px]' key={course.id}>
-                      <div className='h-[45%] w-full rounded-t-lg'>
+                      <div className='h-[50%] w-full rounded-t-lg'>
                         <img src={course.img} className='w-full h-full rounded-t-sm object-cover' alt='' />
                       </div>
-                      <div className='pt-2 px-3 border border-t-0 h-[55%]  border-[#D9D9D9]'>
+                      <div className='pt-2 px-3 border border-t-0 h-[50%]  border-[#D9D9D9]'>
                         <h5 className='mb-1 text-lg font-[400] tracking-tight text-primary-500'>{course.title}</h5>
                         <p className='text-[12px] mb-[4px] text-neutral-90 font-[500]'>Created: {course.dateCreated} -  {course.timeCreated}</p>
                         <div className='flex justify-between mb-2'>
@@ -190,4 +187,4 @@ const Course = () => {
   )
 }
 
-export default Course
+export default Course;
