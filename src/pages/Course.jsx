@@ -5,110 +5,7 @@ import Status from '../assets/icons/status-up.svg';
 import Clock from '../assets/icons/clock.svg';
 import Arrowdown from '../assets/icons/arrow-down.svg';
 
-const Course = () => {
-
-  //To do: Create another js file later to store the data and import it into any file that needs it
-  const courseData = g [
-    {
-      id: 1,
-      title:  "User Experience Design: Figma UI/UX Design",
-      img: Uiux,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 50,
-      level: "Intermediate"
-    },
-    {
-      id: 2,
-      title:  "App Development Fundamentals",
-      img: Appdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 89,
-      level: "Beginner"
-    },
-    {
-      id: 3,
-      title:  "Web Development Fundamentals",
-      img: Webdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 91,
-      level: "Advanced"
-    },
-    {
-      id: 4,
-      title:  "User Experience Design: Figma UI/UX Design",
-      img: Uiux,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 40,
-      level: "Intermediate"
-    },
-    {
-      id: 5,
-      title:  "App Development Fundamentals",
-      img: Appdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 53,
-      level: "Intermediate"
-    },
-    {
-      id: 6,
-      title:  "User Experience Design: Figma UI/UX Design",
-      img: Uiux,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 23,
-      level: "Intermediate"
-    },
-    {
-      id: 7,
-      title:  "Web Development Fundamentals",
-      img: Webdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 50,
-      level: "Intermediate"
-    },
-    {
-      id: 8,
-      title:  "App Development Fundamentals",
-      img: Appdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 50,
-      level: "Intermediate"
-    },
-    {
-      id: 9,
-      title:  "User Experience Design: Figma UI/UX Design",
-      img: Uiux,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 50,
-      level: "Intermediate"
-    }
-  ]
+const Course = ({cdata}) => {
 
   return (
     <div className='w-full mt-20'>
@@ -151,7 +48,7 @@ const Course = () => {
                 </div>
               </div>
               <div className='my-5 px-14 grid grid-cols-3 grid-rows-2 gap-6 '>
-                {courseData.map((course) => {
+                {cdata.map((course) => {
                   return (
                     <div className='w-[284px] bg-white self-start rounded-lg cursor-pointer h-[334px]' key={course.id}>
                       <div className='h-[50%] w-full rounded-t-lg'>
