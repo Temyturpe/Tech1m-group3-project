@@ -4,120 +4,14 @@ import Dollar from '../assets/icons/dollar-square.svg';
 import Status from '../assets/icons/status-up.svg';
 import Clock from '../assets/icons/clock.svg';
 import Arrowdown from '../assets/icons/arrow-down.svg';
-import Appdev from '../assets/images/course_card_images/appdev-card-img.jpg';
-import Webdev from '../assets/images/course_card_images/webdev-card-img.jpg';
-import Uiux from '../assets/images/course_card_images/uiux-card-img.jpg';
 
-const Course = () => {
-
-  //To do: Create another js file later to store the data and import it into any file that needs it
-  const courseData =  [
-    {
-      id: 1,
-      title:  "User Experience Design: Figma UI/UX Design",
-      img: Uiux,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 50,
-      level: "Intermediate"
-    },
-    {
-      id: 2,
-      title:  "App Development Fundamentals",
-      img: Appdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 89,
-      level: "Beginner"
-    },
-    {
-      id: 3,
-      title:  "Web Development Fundamentals",
-      img: Webdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 91,
-      level: "Advanced"
-    },
-    {
-      id: 4,
-      title:  "User Experience Design: Figma UI/UX Design",
-      img: Uiux,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 40,
-      level: "Intermediate"
-    },
-    {
-      id: 5,
-      title:  "App Development Fundamentals",
-      img: Appdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 53,
-      level: "Intermediate"
-    },
-    {
-      id: 6,
-      title:  "User Experience Design: Figma UI/UX Design",
-      img: Uiux,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 23,
-      level: "Intermediate"
-    },
-    {
-      id: 7,
-      title:  "Web Development Fundamentals",
-      img: Webdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 50,
-      level: "Intermediate"
-    },
-    {
-      id: 8,
-      title:  "App Development Fundamentals",
-      img: Appdev,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 50,
-      level: "Intermediate"
-    },
-    {
-      id: 9,
-      title:  "User Experience Design: Figma UI/UX Design",
-      img: Uiux,
-      dateCreated: "January 2022",
-      timeCreated: "5:48pm",
-      price: "$1010",
-      duration: "6 weeks",
-      modules: 50,
-      level: "Intermediate"
-    }
-  ]
+const Course = ({cdata}) => {
 
   return (
     <div className='w-full mt-20'>
         <div className="content w-full flex">
             <div className="left w-[20%]"></div>
-            <div className="right w-[80%] flex flex-col justify-center text-2xl mt-8 font-semibold ">
+            <div className="right w-[80%] flex flex-col justify-center mt-8 ">
               <div className='flex justify-between my-5 px-14'>
                 <div className='max-w-fit'>
                   <p className='text-primary-75 text-[16px]'>Home/<span className='text-primary-500 text-[16px]'>Courses</span></p>
@@ -154,7 +48,7 @@ const Course = () => {
                 </div>
               </div>
               <div className='my-5 px-14 grid grid-cols-3 grid-rows-2 gap-6 '>
-                {courseData.map((course) => {
+                {cdata.map((course) => {
                   return (
                     <div className='w-[284px] bg-white self-start rounded-lg cursor-pointer h-[334px]' key={course.id}>
                       <div className='h-[50%] w-full rounded-t-lg'>
