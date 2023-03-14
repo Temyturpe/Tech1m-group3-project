@@ -11,7 +11,7 @@ import Uiux from '../assets/images/course_card_images/uiux-card-img.jpg';
 const Course = () => {
 
   //To do: Create another js file later to store the data and import it into any file that needs it
-  const courseData =  [
+  const courseData = g [
     {
       id: 1,
       title:  "User Experience Design: Figma UI/UX Design",
