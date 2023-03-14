@@ -12,21 +12,21 @@ function App() {
   return (
     <div className="App">
       <Router>
-     <Navbar/>
-     <div className="content-box w-full flex">
-      <Sidebar/>
-     <Routes>
-       <Route path="/" element={<Home />} />
-       <Route path="/courses" element={<Course />} />
-       <Route path="/students" element={<Students />} />
-       <Route path="/payments" element={<Payment />} />
-       <Route path="/quiz" element={<Quiz />} />
-       <Route path="/messages" element={<Messages />} />
-     </Routes>
-     </div>
+        <Navbar/>
+        <div className="content-box w-full flex">
+          <Sidebar/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/courses" element={<Course />} />
+            <Route path="/students" element={<Students />} />
+            <Route path="/payments" element={<Payment />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/messages" element={<Messages />} />
+          </Routes>
+        </div>
      </Router>
-</div>
+    </div>
   )
- }
+}
 
 export default App;
