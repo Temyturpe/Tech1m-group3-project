@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react'
-import Dash from '../assets/icons/home.svg'
-import Courses from '../assets/icons/courses.svg'
-import Students from '../assets/icons/students.svg'
-import Payments from '../assets/icons/payments.svg'
-import Quiz from '../assets/icons/quiz.svg'
-import Massages from '../assets/icons/message.svg'
 import { Link } from 'react-router-dom'
+import { BsUiRadiosGrid } from 'react-icons/bs'
+import { TbBook2, TbBrandWechat } from 'react-icons/tb'
+import { SlGraduation } from 'react-icons/sl'
+import { AiOutlineDollarCircle } from 'react-icons/ai'
+import { MdOutlineQuiz } from 'react-icons/md'
 
 
 const Sidebar = () => {
@@ -17,70 +16,70 @@ const Sidebar = () => {
     <div className='w-[20%] bg-primary-50 fixed top-0 left-0 h-screen pt-24'>
         <div className="navs mt-12 w-full px-16">
       <ul className="links flex flex-col gap-8 ">
-        <li >
+        <li className='text-primary-100 active:text-primary-500'>
             <Link
                   to="/"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
-                  className="link flex gap-3 w-5 h-5 items-center"
+                  className="link flex gap-3 items-center"
                 >
-                  <img src={Dash} alt="" /><div className="text text-primary-500">Dashboard</div>
+                  <div className="icon"><BsUiRadiosGrid className=' w-6 h-6 ' /></div> <div className="text ">Dashboard</div>
             </Link>
         </li>
-        <li >
+        <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
                   to="/courses"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
-                  className="link flex gap-3 w-5 h-5 items-center"
+                  className="link flex gap-3 items-center"
                 >
-                  <img src={Courses} alt="" /><div className="text text-primary-100">Courses</div>
+                   <div className="icon"><TbBook2 className=' w-6 h-6 ' /></div> <div className="text">Courses</div>
             </Link>
         </li>
-        <li >
+        <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
                   to="/students"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
-                  className="link flex gap-3 w-5 h-5 items-center"
+                  className="link flex gap-3 items-center"
                 >
-                  <img src={Students} alt="" /><div className="text text-primary-100">Students</div>
+                  <div className="icon">< SlGraduation className=' w-6 h-6'/></div><div className="text">Students</div>
             </Link>
         </li>
-        <li >
+        <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
                   to="/payments"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
-                  className="link flex gap-3 w-5 h-5 items-center"
+                  className="link flex gap-3 items-center"
                 >
-                  <img src={Payments} alt="" /><div className="text text-primary-100">Payments</div>
+                  <div className="icon">< AiOutlineDollarCircle className=' w-6 h-6'/></div><div className="text">Payments</div>
             </Link>
         </li>
-        <li >
+        <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
                   to="/quiz"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
-                  className="link flex gap-3 w-5 h-5 items-center"
+                  className="link flex gap-3 items-center"
                 >
-                  <img src={Quiz} alt="" /><div className="text text-primary-100">Quiz / Assignments</div>
+                  <div className="icon">< MdOutlineQuiz className=' w-6 h-6'/></div><div className="text">Quiz / Assignments</div>
             </Link>
         </li>
-        <li >
+        <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
                   to="/messages"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
-                  className="link flex gap-3 w-5 h-5 items-center"
+                  className="link flex gap-3 items-center"
                 >
-                  <img src={Massages} alt="" /><div className="text text-primary-100">Messages</div>
+                  <div className="icon">< TbBrandWechat className=' w-6 h-6'/></div><div className="text">Messages</div>
             </Link>
         </li>
      </ul>
