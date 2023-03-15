@@ -4,11 +4,17 @@ import backgroundImg from '../assets/images/background_images/forgotpassword.jpg
 import '../assets/css/global.css'
 import { Link } from 'react-router-dom'
 import SignInForm from './SignInForm'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form} from 'formik';
 import * as Yup from 'yup';
+import { useAuth } from '../contexts/AuthContext'
+import { useState } from 'react'
 
 const ForgotPassword = () => {
-    const SignupSchema = Yup.object().shape({  
+     const [error,setError]=useState('')
+     const [success,setSuccess]=useState('')
+     const {resetPassword} =useAuth()
+
+     const SignupSchema = Yup.object().shape({  
         email: Yup.string().email('Invalid email').required('Required'),
       });
       function getStyles(errors, fieldName, touched) {
@@ -26,18 +32,30 @@ const ForgotPassword = () => {
                 email: '',
             }}
             validationSchema={SignupSchema}
-            onSubmit={values => {
-                // Link to the HomePage
-                console.log(values);
-            }}
+            onSubmit={async(values,errors)=>{
+                console.log(values)
+                   setSuccess('')
+                    try {
+                        setError('')
+                        await resetPassword(values.email)
+                        setSuccess('An email with password reset link will be sent to your registered email address')
+                      } catch{
+                        setError('User does not exist')
+                    }
+                    console.log(values)
+               }}
         >
-            {({errors,touched})=>(
+            {({errors,touched, isSubmitting})=>(
                 <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 gap-y-[1rem] h-[50%] w-[30%] m-auto">
                     <div className=' w-[7rem] '>
                         <img src={logo} alt="background image"/>
                     </div>
-                    <p className='text-error text-center text-xs w-[20rem]'>An email with password reset link will be sent to you
-        registered email address. If it exists on our system.</p>
+                    {error?(
+                        <p className='text-error text-center text-xs w-[20rem]'>{error}</p>
+                    ):null}
+                    {success?(
+                    <p className='text-success text-center text-xs w-[20rem]'>{success}</p>
+                ):null}
                     <div className='w-[100%] flex flex-col items-center'>
 
                         <SignInForm 
@@ -53,7 +71,7 @@ const ForgotPassword = () => {
                             <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter your valid email</p>
                         }
                     </div>
-                    <button className=' py-1 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Log in</button>
+                    <button type='submit'disabled={isSubmitting} className=' py-1 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Reset Password</button>
                     <p className='text-xs text-center md:col-span-2'>Don't have an account! <Link to='/signup' className='text-primary-200'>Sign up</Link></p>
                 </Form>
 

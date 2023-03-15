@@ -2,28 +2,28 @@ import React from 'react'
 import logo from '../assets/images/logos/blue.png'
 import backgroundImg from '../assets/images/background_images/page3.jpg'
 import '../assets/css/global.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SignInForm from './SignInForm'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { useAuth } from '../contexts/AuthContext'
+import { useState } from 'react'
+import Welcome from './Welcome'
 
-const SignupSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
-  lastName: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string()
-  .required("No password provided.")
-  .min(8, "Password is too short - should be 8 chars minimum.")
-  .matches(/(?=.*[0-9])/, "Password must contain a number.")
-});
+
 
 const Login = () => {
+  const [error,setError]=useState('')
+  const {login} =useAuth()
+  const history = useNavigate()
+  
+  const SignupSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Required'),
+    password: Yup.string()
+    .required("No password provided.")
+    .min(8, "Password is too short - should be 8 chars minimum.")
+    .matches(/(?=.*[0-9])/, "Password must contain a number.")
+  });
   function getStyles(errors, fieldName, touched) {
     if (errors, fieldName,touched) {
       return {
@@ -43,16 +43,26 @@ const Login = () => {
                 password:'',
               }}
               validationSchema={SignupSchema}
-              onSubmit={values => {
-                // Link to the HomePage
-                console.log(values);
-              }}
+              onSubmit={async(values,errors)=>{
+                console.log(values)
+                   console.log(errors)
+                    try {
+                        setError('')
+                        await login(values.email,values.password)
+                        history('/welcome')
+                      } catch{
+                        setError('Invalid password or username')
+                    }
+                    console.log(values)
+               }}
            >
-              {({ errors, touched }) => (
+              {({ errors, touched, isSubmitting }) => (
                 <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 rounded-lg p-10 lg:p-0 gap-y-[1rem] h-[90%] w-[70%] m-auto">
                   <div className=' w-[7rem] '>
                       <img src={logo} alt="background image"/>
                   </div>
+                  <p className='text-red h6'>{error}</p>
+                  
                     <SignInForm 
                       title='Email Address'
                       inputType='email'
@@ -92,7 +102,7 @@ const Login = () => {
 
                       </div>
 
-                      <button type='onSubmit' className=' py-1 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Log in</button>
+                      <button type='submit' disabled={isSubmitting} className=' py-1 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Log in</button>
                       <p className='text-xs text-center md:col-span-2'>Don't have an account! <Link to='/signup' className='text-primary-200'>Sign up</Link></p>
                       <Link to='/forgotPassword' className=' text-xs text-center text-neutral-70'>Forgot Password?</Link>
                 </Form>
