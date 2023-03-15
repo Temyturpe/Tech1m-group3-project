@@ -74,7 +74,7 @@ const SignIn = () => {
                    }}
                     
             >
-                {({errors, touched, isSubmitting})=>(
+                {({errors, touched, isSubmitting,isValid})=>(
             <div className='grid  my-20 md:my-0 md:w-1/2  bg-white-30 h-[70%] py-20 justify-between px-10 items-center '>
                 {error?(
                     <p className='text-red h6 text-center'>{error}</p>
@@ -92,6 +92,7 @@ const SignIn = () => {
                             placeholder='Adams Chuks'
                             style={getStyles(touched.fullname, "fullname", errors.fullname)}
                             name='fullname'
+                            isValid={Formik.errors}
                             smalltext='Enter your full name without special character'
                             />
                             {errors.fullname && touched.fullname ? (
@@ -155,8 +156,8 @@ const SignIn = () => {
 
                             </div>
 
-                            <button className='md:col-span-2 py-1 bg-primary-200 text-white-10 w-[95%]' type='submit' disabled={isSubmitting} >Sign up</button>
-                            <p className='text-xs text-center md:col-span-2'>Already have an account! <Link to='/login' className='text-primary-200'>Log in</Link></p>
+                            <button className='md:col-span-2 disabled:bg-primary-100 hover:bg-primary-500 py-1 bg-primary-200 text-white-10 w-[95%]' type='submit' disabled={isSubmitting || !isValid} >Sign up</button>
+                            <p className='text-xs text-center md:col-span-2'>Already have an account! <Link to='/login' className='text-primary-200 hover:text-primary-500'>Log in</Link></p>
                     </Form>
                 </div>
                 )}

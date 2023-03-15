@@ -32,12 +32,13 @@ const ForgotPassword = () => {
                 email: '',
             }}
             validationSchema={SignupSchema}
-            onSubmit={async(values,errors)=>{
+            onSubmit={async(values,{resetForm})=>{
                 console.log(values)
                    setSuccess('')
                     try {
                         setError('')
                         await resetPassword(values.email)
+                        resetForm({values:''})
                         setSuccess('An email with password reset link will be sent to your registered email address')
                       } catch{
                         setError('User does not exist')
@@ -45,7 +46,7 @@ const ForgotPassword = () => {
                     console.log(values)
                }}
         >
-            {({errors,touched, isSubmitting})=>(
+            {({errors,touched, isSubmitting,isValid})=>(
                 <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 gap-y-[1rem] h-[50%] w-[30%] m-auto">
                     <div className=' w-[7rem] '>
                         <img src={logo} alt="background image"/>
@@ -62,6 +63,7 @@ const ForgotPassword = () => {
                             title='Email Address'
                             inputType='email'
                             name='email'
+                            isValid={Formik.errors}
                             style={getStyles(touched.email, "email", errors.email)}
                             placeholder='Adams@gmail.com'
                             smalltext='Enter your valid email'
@@ -71,8 +73,8 @@ const ForgotPassword = () => {
                             <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter your valid email</p>
                         }
                     </div>
-                    <button type='submit'disabled={isSubmitting} className=' py-1 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Reset Password</button>
-                    <p className='text-xs text-center md:col-span-2'>Don't have an account! <Link to='/signup' className='text-primary-200'>Sign up</Link></p>
+                    <button type='submit' disabled={isSubmitting || !isValid} className=' py-1 bg-primary-200 text-white-10 w-[100%] disabled:bg-primary-100 hover:bg-primary-500 md:w-[90%]'>Reset Password</button>
+                    <p className='text-xs text-center md:col-span-2'>Don't have an account! <Link to='/signup' className='text-primary-200 hover:text-primary-500'>Sign up</Link></p>
                 </Form>
 
             )}

@@ -32,6 +32,14 @@ const Login = () => {
     }  
   }
 
+  const disable= function (isSubmitting,dirty) {
+    if (isSubmitting || Formik.dirty) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <div className=' h-screen flex-col flex lg:flex-row w-screen' >
       <div className=' w-screen h-[50%] lg:h-full lg:w-1/2 flex flex-col  lg:flex-row items-center justify-between  'style={{backgroundImage: `url(${backgroundImg})`,backgroundSize:'cover'}}>     
@@ -49,14 +57,14 @@ const Login = () => {
                     try {
                         setError('')
                         await login(values.email,values.password)
-                        history('/welcome')
+                        history('/in/home')
                       } catch{
                         setError('Invalid password or username')
                     }
                     console.log(values)
                }}
            >
-              {({ errors, touched, isSubmitting }) => (
+              {({ errors, touched, isSubmitting,isValid }) => (
                 <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 rounded-lg p-10 lg:p-0 gap-y-[1rem] h-[90%] w-[70%] m-auto">
                   <div className=' w-[7rem] '>
                       <img src={logo} alt="background image"/>
@@ -69,6 +77,7 @@ const Login = () => {
                       placeholder='Adams@gmail.com'
                       smalltext='Enter your valid email'
                       name='email'
+                      isValid={Formik.errors}
                       style={getStyles(touched.email, "email", errors.email)}
         
                       />
@@ -102,9 +111,9 @@ const Login = () => {
 
                       </div>
 
-                      <button type='submit' disabled={isSubmitting} className=' py-1 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Log in</button>
-                      <p className='text-xs text-center md:col-span-2'>Don't have an account! <Link to='/signup' className='text-primary-200'>Sign up</Link></p>
-                      <Link to='/forgotPassword' className=' text-xs text-center text-neutral-70'>Forgot Password?</Link>
+                      <button type='submit' disabled={isSubmitting || !isValid} className=' py-1 disabled:bg-primary-100 hover:bg-primary-500 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Log in</button>
+                      <p className='text-xs text-center md:col-span-2'>Don't have an account! <Link to='/signup' className='text-primary-200 hover:text-primary-500'>Sign up</Link></p>
+                      <Link to='/forgotPassword' className=' text-xs text-center text-neutral-70 hover:text-neutral-200'>Forgot Password?</Link>
                 </Form>
                 
               )}
