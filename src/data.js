@@ -625,3 +625,24 @@ export const Paydata = [
       },
      
 ]
+export const AssignmentData = [
+  {
+    id: 1,
+    name : "Redesign your Favourite Application",
+    submission : 200
+  },
+  {
+    id: 2,
+    name : "Wireframe your Favourite Application",
+    submission : 200
+  },
+  {
+    id: 3,
+    name : "Do a research on design thinking",
+    submission : 200
+  },
+  {
+    id: 4,
+    name : "Read up on ideation",
+    submission : 200
+  }
