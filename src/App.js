@@ -7,7 +7,7 @@ import Messages from "./pages/Messages";
 import Payment from "./pages/Payment";
 import Quiz from "./pages/Quiz";
 import Students from "./pages/Students"
-import {CoursesData, StudentsData} from './data'
+import {CoursesData, StudentsData, Paydata} from './data'
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<Course cdata = {CoursesData}/>} />
             <Route path="/students" element={<Students sdata = {StudentsData}/>} />
-            <Route path="/payments" element={<Payment />} />
+            <Route path="/payments" element={<Payment pdata = {Paydata}/>} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/messages" element={<Messages />} />
           </Routes>
