@@ -1,8 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Arrowup from '../assets/icons/arrow-up-1.svg';
 import Arrowdown from '../assets/icons/arrow-down.svg';
+import Pagination from '../components/Pagination';
+import Student from '../components/Student';
 
 const Students = ({sdata}) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(9);
+
+// Get current posts
+const indexOfLastPost = currentPage * postsPerPage;
+const indexOfFirstPost = indexOfLastPost - postsPerPage;
+const currentPosts = sdata.slice(indexOfFirstPost, indexOfLastPost);
+
+// Change page
+const paginateFront = () => setCurrentPage(currentPage + 1);
+const paginateBack = () => setCurrentPage(currentPage - 1);
+
   return (
     <div className='w-full'>
     <div className="content w-full flex">
@@ -66,33 +80,18 @@ const Students = ({sdata}) => {
                 </th>
             </tr>
         </thead>
-        {sdata.map((student) => {
-          return (
-          <tbody className='flex flex-col gap-4 w-[100%] mt-3 ' key={student.id}>
-          <tr class="bg-white-20 text-primary-500 w-full flex justify-between rounded-md">
-           <td class="px-6 py-4 flex-1 capitalize">
-             {student.name}
-          </td>
-          <td class="px-6 py-4 flex-1">
-         {student.course}
-         </td>
-          <td class="px-6 py-4 flex-1 capitalize">
-          {student.level}
-          </td>
-         <td class="px-6 py-4 flex-1">
-         {student.guardian}
-         </td>
-         <td class="px-6 py-4 flex-1">
-          {student.school}
-          </td>
-        </tr>
-       </tbody>
-          )
-        })}
-       
+        <div >
+           <Student student={currentPosts}/>
+          </div> 
     </table>
 </div>
-
+<Pagination
+                postsPerPage={postsPerPage}
+                totalPosts={sdata.length}
+                paginateBack={paginateBack}
+                paginateFront={paginateFront}
+                currentPage={currentPage}
+            />
 </div>
         </div>
     </div>

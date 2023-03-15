@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Arrowup from '../assets/icons/arrow-up-1.svg';
-import Dollar from '../assets/icons/dollar-square.svg';
-import Status from '../assets/icons/status-up.svg';
-import Clock from '../assets/icons/clock.svg';
 import Arrowdown from '../assets/icons/arrow-down.svg';
+import Pagination from '../components/Pagination';
+import Courses from '../components/Courses';
 
 const Course = ({cdata}) => {
+  const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(9);
+
+// Get current posts
+const indexOfLastPost = currentPage * postsPerPage;
+const indexOfFirstPost = indexOfLastPost - postsPerPage;
+const currentPosts = cdata.slice(indexOfFirstPost, indexOfLastPost);
+
+// Change page
+const paginateFront = () => setCurrentPage(currentPage + 1);
+const paginateBack = () => setCurrentPage(currentPage - 1);
 
   return (
     <div className='w-full mt-20'>
@@ -47,41 +57,21 @@ const Course = ({cdata}) => {
                   </div>
                 </div>
               </div>
-              <div className='my-5 px-14 grid grid-cols-3 grid-rows-2 gap-6 '>
-                {cdata.map((course) => {
-                  return (
-                    <div className='w-[284px] bg-white self-start rounded-lg cursor-pointer h-[334px]' key={course.id}>
-                      <div className='h-[50%] w-full rounded-t-lg'>
-                        <img src={course.img} className='w-full h-full rounded-t-sm object-cover' alt='' />
-                      </div>
-                      <div className='pt-2 px-3 border border-t-0 h-[50%]  border-[#D9D9D9]'>
-                        <h5 className='mb-1 text-lg font-[400] tracking-tight text-primary-500'>{course.title}</h5>
-                        <p className='text-[12px] mb-[4px] text-neutral-90 font-[500]'>Created: {course.dateCreated} -  {course.timeCreated}</p>
-                        <div className='flex justify-between mb-2'>
-                          <div className='flex items-center'>
-                            <img src={Dollar} className='w-[13px] h-[13px]' alt="" />
-                            <p className='text-primary-75 ml-1 text-xs'>{course.price}</p>
-                          </div>
-                          <div className='flex items-center'>
-                            <img src={Status} className='w-[13px] h-[13px]' alt="" />
-                            <p className='text-primary-75 ml-1 text-xs'>{course.level}</p>
-                          </div>
-                          <div className='flex items-center'>
-                            <img src={Clock} className='w-[13px] h-[13px]' alt="" />
-                            <p className='text-primary-75 ml-1 text-xs'>{course.duration}</p>
-                          </div>
-                        </div>
-                        <p className='text-neutral-70 text-xs font-[500]'>{course.modules} modules</p>
-                      </div>
-                    </div>
-                    
-                  )
-                })}
+              <div >
+                   <Courses course={currentPosts}/>
               </div>
+              <Pagination
+                postsPerPage={postsPerPage}
+                totalPosts={cdata.length}
+                paginateBack={paginateBack}
+                paginateFront={paginateFront}
+                currentPage={currentPage}
+            />
+
             </div>
         </div>
     </div>
   )
 }
 
-export default Course
+export default Course;
