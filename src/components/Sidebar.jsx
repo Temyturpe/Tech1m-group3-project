@@ -18,7 +18,7 @@ const Sidebar = () => {
       <ul className="links flex flex-col gap-8 ">
         <li className='text-primary-100 active:text-primary-500'>
             <Link
-                  to="/"
+                  to="/in/home"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
@@ -29,7 +29,7 @@ const Sidebar = () => {
         </li>
         <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
-                  to="/courses"
+                  to="/in/courses"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
@@ -40,7 +40,7 @@ const Sidebar = () => {
         </li>
         <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
-                  to="/students"
+                  to="/in/students"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
@@ -51,7 +51,7 @@ const Sidebar = () => {
         </li>
         <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
-                  to="/payments"
+                  to="/in/payments"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
@@ -62,7 +62,7 @@ const Sidebar = () => {
         </li>
         <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
-                  to="/quiz"
+                  to="/in/quiz"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
@@ -73,7 +73,7 @@ const Sidebar = () => {
         </li>
         <li className='text-primary-100 hover:text-primary-500 active:text-primary-500'>
             <Link
-                  to="/messages"
+                  to="/in/messages"
                   onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                   }}
