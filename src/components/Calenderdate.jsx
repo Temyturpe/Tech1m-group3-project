@@ -12,12 +12,12 @@ export default function Calendardate() {
 	const [selectDate, setSelectDate] = useState(currentDate);
 	return (
 		<div className="">
-			<div className="w-full h-96">
+			<div className="w-full md:h-96 h-72">
 				<div className="flex justify-between items-center">
-					<h1 className="select-none font-semibold text-primary-500 text-xl">
+					<h1 className="select-none font-semibold text-primary-500 text-base md:text-xl">
 						{months[today.month()]} {today.year()}
 					</h1>
-					<div className="flex gap-10 items-center ">
+					<div className="flex gap-4 md:gap-8 items-center ">
             <div className="prev" onClick={() => {
 								setToday(today.month(today.month() - 1));
 							}}><img src={Prev} alt=""className="hover:scale-105 transition-all" />
@@ -33,7 +33,7 @@ export default function Calendardate() {
 						return (
 							<h1
 								key={index}
-								className="text-base mt-5 text-center grid text-primary-300 select-none"
+								className="text-base mt-3 md:mt-5 text-center grid text-primary-300 select-none"
 							>
 								{day}
 							</h1>
@@ -47,7 +47,7 @@ export default function Calendardate() {
 							return (
 								<div
 									key={index}
-									className="p-2 text-center grid place-content-center text-primary-200 text-sm"
+									className="p-1 md:p-2 text-center grid place-content-center text-primary-200 text-xs md:text-sm"
 								>
 									<h1
 										className={cn(
@@ -61,7 +61,7 @@ export default function Calendardate() {
 												date.toDate().toDateString()
 												? "bg-primary-300 text-white-30"
 												: "",
-											"h-10 w-10 rounded-full grid place-content-center hover:bg-primary-300 hover:text-white-30 transition-all cursor-pointer select-none"
+											"h-7 md:h-10 w-7 md:w-10 rounded-full grid place-content-center hover:bg-primary-300 hover:text-white-30 transition-all cursor-pointer select-none"
 										)}
 										onClick={() => {
 											setSelectDate(date);

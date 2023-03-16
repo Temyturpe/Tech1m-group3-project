@@ -7,7 +7,7 @@ import Member5 from '../assets/images/avatars/member5.jpg'
 
 const Incoming = () => {
   return (
-    <div className='flex-1 w-full'>
+    <div className='w-full'>
       <div className="title text-primary-500">Upcoming Lessons</div>
       <div className="lessons mt-4">
         <ul className='text-primary-100 flex flex-col gap-3'>
