@@ -18,7 +18,7 @@ const ForgotPassword = () => {
         email: Yup.string().email('Invalid email').required('Required'),
       });
       function getStyles(errors, fieldName, touched) {
-        if (errors, fieldName,touched) {
+        if (errors, fieldName, touched ) {
           return {
             border: '1px solid red'
           }
@@ -47,9 +47,9 @@ const ForgotPassword = () => {
                }}
         >
             {({errors,touched, isSubmitting,isValid})=>(
-                <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 gap-y-[1rem] h-[50%] w-[30%] m-auto">
+                <Form className="flex flex-col justify-center items-center bg-white-30 gap-y-[1rem] h-[50%] w-[30%] m-auto">
                     <div className=' w-[7rem] '>
-                        <img src={logo} alt="background image"/>
+                        <img src={logo} alt="backgroundimage"/>
                     </div>
                     {error?(
                         <p className='text-error text-center text-xs w-[20rem]'>{error}</p>
