@@ -15,8 +15,6 @@ const SignIn = () => {
     const [success,setSuccess]=useState('')
     const {signup} =useAuth()
 
-  
-
     
     const SignupSchema = Yup.object().shape({
         fullname: Yup.string()

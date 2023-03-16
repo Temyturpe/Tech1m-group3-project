@@ -32,7 +32,7 @@ const Login = () => {
     }  
   }
 
-  const disable= function (isSubmitting,dirty) {
+  const disable = function (isSubmitting,dirty) {
     if (isSubmitting || Formik.dirty) {
       return true
     } else {
@@ -67,7 +67,7 @@ const Login = () => {
               {({ errors, touched, isSubmitting,isValid }) => (
                 <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 rounded-lg px-5 py-2 lg:py-10 gap-y-[1rem] h-fit-content w-[70%] m-auto">
                   <div className=' w-[7rem] '>
-                      <img src={logo} alt="background image"/>
+                      <img src={logo} alt="backgroundimage"/>
                   </div>
                   <p className='text-red h6'>{error}</p>
                   
