@@ -7,6 +7,8 @@ import SignInForm from './SignInForm'
 import { Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
+import arrow from '../assets/icons/login.svg' 
+
 
 const SignIn = () => {
     const [error,setError]=useState('')
@@ -154,7 +156,14 @@ const SignIn = () => {
 
                             </div>
 
-                            <button className='md:col-span-2 disabled:bg-primary-100 hover:bg-primary-500 py-1 bg-primary-200 text-white-10 w-[95%]' type='submit' disabled={isSubmitting || !isValid} >Sign up</button>
+                            <button className='md:col-span-2 rounded-lg disabled:bg-primary-100 hover:bg-primary-500 py-1 bg-primary-200 text-white-10 w-[95%]' type='submit' disabled={isSubmitting || !isValid} >
+                                <div className="flex justify-center space-x-2">
+                                    <img src={arrow} alt="" />
+                                    <div>
+                                        Sign up
+                                    </div>
+                                </div>
+                                </button>
                             <p className='text-xs text-center md:col-span-2'>Already have an account! <Link to='/login' className='text-primary-200 hover:text-primary-500'>Log in</Link></p>
                     </Form>
                 </div>

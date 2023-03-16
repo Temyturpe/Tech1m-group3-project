@@ -8,6 +8,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import { useState } from 'react'
+import arrow from '../assets/icons/login.svg' 
 
 
 
@@ -110,7 +111,14 @@ const Login = () => {
 
                       </div>
 
-                      <button type='submit' disabled={isSubmitting || !isValid} className=' py-1 disabled:bg-primary-100 hover:bg-primary-500 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Log in</button>
+                      <button type='submit' disabled={isSubmitting || !isValid} className=' py-1 disabled:bg-primary-100 rounded-lg hover:bg-primary-500 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>
+                        <div className="flex justify-center space-x-2">
+                                    <img src={arrow} alt="" />
+                                    <div>
+                                        Log in
+                                    </div>
+                                </div>
+                        </button>
                       <p className='text-xs text-center md:col-span-2'>Don't have an account! <Link to='/signup' className='text-primary-200 hover:text-primary-500'>Sign up</Link></p>
                       <Link to='/forgotPassword' className=' text-xs text-center text-neutral-70 hover:text-neutral-200'>Forgot Password?</Link>
                 </Form>
