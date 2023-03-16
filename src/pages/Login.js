@@ -8,6 +8,9 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import { useState } from 'react'
+import arrow from '../assets/icons/login.svg' 
+
+
 
 const Login = () => {
   const [error,setError]=useState('')
@@ -41,7 +44,7 @@ const Login = () => {
     <div className=' h-screen flex-col flex lg:flex-row w-screen' >
       <div className=' w-screen h-[50%] lg:h-full lg:w-1/2 flex flex-col  lg:flex-row items-center justify-between  'style={{backgroundImage: `url(${backgroundImg})`,backgroundSize:'cover'}}>     
       </div>
-      <div className='flex flex-col bg-primary-100 bg-opacity-50 h-full justify-center px-10  lg:w-1/2'>
+      <div className='flex flex-col bg-primary-100 bg-opacity-50 h-full justify-center md:px-10  lg:w-1/2'>
            <Formik
               initialValues={{
                 email: '',
@@ -62,7 +65,7 @@ const Login = () => {
                }}
            >
               {({ errors, touched, isSubmitting,isValid }) => (
-                <Form className="flex flex-col justify-center items-center bg-white-30 rounded-lg p-10 lg:p-0 gap-y-[1rem] h-[90%] w-[70%] m-auto">
+                <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 rounded-lg px-5 py-2 lg:py-10 gap-y-[1rem] h-fit-content w-[70%] m-auto">
                   <div className=' w-[7rem] '>
                       <img src={logo} alt="backgroundimage"/>
                   </div>
@@ -108,7 +111,14 @@ const Login = () => {
 
                       </div>
 
-                      <button type='submit' disabled={isSubmitting || !isValid} className=' py-1 disabled:bg-primary-100 hover:bg-primary-500 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>Log in</button>
+                      <button type='submit' disabled={isSubmitting || !isValid} className=' py-1 disabled:bg-primary-100 rounded-lg hover:bg-primary-500 bg-primary-200 text-white-10 w-[100%] md:w-[90%]'>
+                        <div className="flex justify-center space-x-2">
+                                    <img src={arrow} alt="" />
+                                    <div>
+                                        Log in
+                                    </div>
+                                </div>
+                        </button>
                       <p className='text-xs text-center md:col-span-2'>Don't have an account! <Link to='/signup' className='text-primary-200 hover:text-primary-500'>Sign up</Link></p>
                       <Link to='/forgotPassword' className=' text-xs text-center text-neutral-70 hover:text-neutral-200'>Forgot Password?</Link>
                 </Form>
