@@ -646,3 +646,4 @@ export const AssignmentData = [
     name : "Read up on ideation",
     submission : 200
   }
+  ]

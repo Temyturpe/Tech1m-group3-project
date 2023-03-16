@@ -1,5 +1,3 @@
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Course from "./pages/Course";
@@ -10,7 +8,7 @@ import Students from "./pages/Students";
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
-import {CoursesData, StudentsData, Paydata} from './data'
+import {CoursesData, StudentsData, Paydata, AssignmentData} from './data'
 import ForgotPassword from "./pages/ForgotPassword";
 import MainLayout from "./components/MainLayout";
 
@@ -26,7 +24,7 @@ function App() {
                   <Route path="courses" element={<Course cdata = {CoursesData}/>} />
                   <Route path="students" element={<Students sdata = {StudentsData}/>} />
                   <Route path="payments" element={<Payment pdata = {Paydata}/>} />
-                  <Route path="quiz" element={<Quiz />} />
+                  <Route path="quiz" element={<Quiz bdata = {AssignmentData}/>} />
                   <Route path="messages" element={<Messages />} />
                 </Route>
                 <Route path='/login' element={<Login/>} />
