@@ -8,9 +8,6 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import { useState } from 'react'
-import Welcome from './Welcome'
-
-
 
 const Login = () => {
   const [error,setError]=useState('')
@@ -32,7 +29,7 @@ const Login = () => {
     }  
   }
 
-  const disable= function (isSubmitting,dirty) {
+  const disable = function (isSubmitting,dirty) {
     if (isSubmitting || Formik.dirty) {
       return true
     } else {
@@ -65,9 +62,9 @@ const Login = () => {
                }}
            >
               {({ errors, touched, isSubmitting,isValid }) => (
-                <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 rounded-lg p-10 lg:p-0 gap-y-[1rem] h-[90%] w-[70%] m-auto">
+                <Form className="flex flex-col justify-center items-center bg-white-30 rounded-lg p-10 lg:p-0 gap-y-[1rem] h-[90%] w-[70%] m-auto">
                   <div className=' w-[7rem] '>
-                      <img src={logo} alt="background image"/>
+                      <img src={logo} alt="backgroundimage"/>
                   </div>
                   <p className='text-red h6'>{error}</p>
                   
