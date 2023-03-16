@@ -26,10 +26,10 @@ const ForgotPassword = () => {
       }
   return (
     <div className=' h-screen w-screen'  style={{backgroundImage: `url(${backgroundImg})`,backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
-      <div className='bg-dblue-900 bg-opacity-70 h-full flex flex-col  md:flex-row items-center justify-between px-20'>
+      <div className='bg-dblue-900 bg-opacity-70 h-full flex flex-col  md:flex-row items-center justify-between px-5 md:px-20'>
         <Formik
              initialValues={{
-                email: '',
+                email: ''
             }}
             validationSchema={SignupSchema}
             onSubmit={async(values,{resetForm})=>{
@@ -47,7 +47,7 @@ const ForgotPassword = () => {
                }}
         >
             {({errors,touched, isSubmitting,isValid})=>(
-                <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 gap-y-[1rem] h-[50%] w-[30%] m-auto">
+                <Form className="flex flex-col justify-center items-center w-[100%] rounded-lg bg-white-30 gap-y-[1rem] py-6 md:py-6 md:h-fit-content md:w-[40%] px-5 md:px-1  m-auto">
                     <div className=' w-[7rem] '>
                         <img src={logo} alt="background image"/>
                     </div>

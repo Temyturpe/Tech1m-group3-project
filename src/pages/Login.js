@@ -8,7 +8,6 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import { useState } from 'react'
-import Welcome from './Welcome'
 
 
 
@@ -44,7 +43,7 @@ const Login = () => {
     <div className=' h-screen flex-col flex lg:flex-row w-screen' >
       <div className=' w-screen h-[50%] lg:h-full lg:w-1/2 flex flex-col  lg:flex-row items-center justify-between  'style={{backgroundImage: `url(${backgroundImg})`,backgroundSize:'cover'}}>     
       </div>
-      <div className='flex flex-col bg-primary-100 bg-opacity-50 h-full justify-center px-10  lg:w-1/2'>
+      <div className='flex flex-col bg-primary-100 bg-opacity-50 h-full justify-center md:px-10  lg:w-1/2'>
            <Formik
               initialValues={{
                 email: '',
@@ -65,7 +64,7 @@ const Login = () => {
                }}
            >
               {({ errors, touched, isSubmitting,isValid }) => (
-                <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 rounded-lg p-10 lg:p-0 gap-y-[1rem] h-[90%] w-[70%] m-auto">
+                <Form className="flex flex-col justify-center items-center w-[100%] bg-white-30 rounded-lg px-5 py-2 lg:py-10 gap-y-[1rem] h-fit-content w-[70%] m-auto">
                   <div className=' w-[7rem] '>
                       <img src={logo} alt="background image"/>
                   </div>
