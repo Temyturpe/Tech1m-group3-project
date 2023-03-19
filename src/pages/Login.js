@@ -9,13 +9,15 @@ import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import { useState } from 'react'
 import arrow from '../assets/icons/login.svg' 
-
+import { AiOutlineMail,AiOutlineEye,AiOutlineEyeInvisible,AiOutlinePhone } from "react-icons/ai";
 
 
 const Login = () => {
   const [error,setError]=useState('')
   const {login} =useAuth()
   const history = useNavigate()
+  const [showPassword,setShowPassword]=useState(true)
+
   
   const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -60,6 +62,8 @@ const Login = () => {
                         history('/in/home')
                       } catch{
                         setError('Invalid password or username')
+                        setTimeout(()=>{
+                        setError('')}, 3000)
                     }
                     console.log(values)
                }}
@@ -71,6 +75,8 @@ const Login = () => {
                   </div>
                   <p className='text-red h6'>{error}</p>
                   
+                  <div className='w-full'>
+
                     <SignInForm 
                       title='Email Address'
                       inputType='email'
@@ -81,22 +87,31 @@ const Login = () => {
                       style={getStyles(touched.email, "email", errors.email)}
         
                       />
+                      <AiOutlineMail className='relative top-[-1.5em] left-[90%] md:left-[75%]'color='blue'/>
                       {errors.email && touched.email ? (
                         <p className='text-xs text-error w-[90%] grid justify-left '>Please enter the correct email format</p>):
                         <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter your valid email</p>
                       }
+                  </div>
+                  <div className='w-full m-auto'>
                       <SignInForm 
                       title='Password'
-                      inputType='password'
+                      inputType={showPassword ? "text" : "password"}
                       placeholder='......'
                       name='password'
                       style={getStyles(touched.password, "password", errors.password)}
                       smalltext='Enter strong password'
                       />
+                      {showPassword?(
+                                    < AiOutlineEye className='relative top-[-1.5em] left-[90%] md:left-[75%]' color='blue' onClick={()=>setShowPassword(!showPassword)}/>
+
+                                ):< AiOutlineEyeInvisible color='blue' className='relative top-[-1.5em] left-[90%] md:left-[75%]' onClick={()=>setShowPassword(!showPassword)}/>}
                       {errors.password && touched.password ? (
                         <p className='text-xs text-error w-[90%] grid justify-left '>{errors.password}</p>):
                         <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter strong password</p>
                       }
+
+                  </div>
                       <div className='w-[100%] md:w-[90%]  '>
                       <div className="flex mb-1 justify-between">
                           <label htmlFor="" className='text-primary-500 text-xs'>Role</label>

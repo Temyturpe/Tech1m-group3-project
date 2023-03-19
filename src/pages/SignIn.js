@@ -8,13 +8,20 @@ import { Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import arrow from '../assets/icons/login.svg' 
+import { BsPerson } from "react-icons/bs";
+import { AiOutlineMail,AiOutlineEye,AiOutlineEyeInvisible,AiOutlinePhone } from "react-icons/ai";
 
 
 const SignIn = () => {
     const [error,setError]=useState('')
+    const [showPassword,setShowPassword]=useState(true)
+    const [displayPassword, setDisplayPassword]=useState('')
     const [success,setSuccess]=useState('')
     const {signup} =useAuth()
 
+   
+
+   
     
     const SignupSchema = Yup.object().shape({
         fullname: Yup.string()
@@ -67,6 +74,8 @@ const SignIn = () => {
                             setSuccess('User was added successfully!')
                         } catch{
                             setError('User already exists')
+                            setTimeout(()=>{
+                                setError('')}, 3000)
                         }
                         console.log(values)
                    }}
@@ -93,6 +102,7 @@ const SignIn = () => {
                             isValid={Formik.errors}
                             smalltext='Enter your full name without special character'
                             />
+                            <BsPerson className='relative top-[-1.5em] left-[90%] md:left-[75%]'/>
                             {errors.fullname && touched.fullname ? (
                             <p className='text-xs text-error w-[90%] grid justify-left '>{errors.fullname}</p>):
                             <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter your full name without special character</p>
@@ -107,6 +117,7 @@ const SignIn = () => {
                                 name='email'
                                 smalltext='Enter your valid email'
                                 />
+                            <AiOutlineMail className='relative top-[-1.5em] left-[90%] md:left-[75%]'/>
                                 {errors.email && touched.email ? (
                             <p className='text-xs text-error w-[90%] grid justify-left '>{errors.email}</p>):
                             <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter your valid email</p>
@@ -115,12 +126,17 @@ const SignIn = () => {
                         <div>
                                 <SignInForm 
                                 title='Password'
-                                inputType='password'
+                                inputType={showPassword ? "text" : "password"}
                                 placeholder='......'
+                                values={displayPassword}
                                 name='password'
                                 style={getStyles(touched.password, "password", errors.password)}
                                 smalltext='Enter strong password'
                                 />
+                                {showPassword?(
+                                    < AiOutlineEye className='relative top-[-1.5em] left-[90%] md:left-[75%]' onClick={()=>setShowPassword(!showPassword)}/>
+
+                                ):< AiOutlineEyeInvisible className='relative top-[-1.5em] left-[90%] md:left-[75%]' onClick={()=>setShowPassword(!showPassword)}/>}
                                 {errors.password && touched.password ? (
                                     <p className='text-xs text-error w-[90%] grid justify-left '>{errors.password}</p>):
                                     <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter strong password</p>
@@ -130,11 +146,13 @@ const SignIn = () => {
                                 <SignInForm 
                                 title='Phone Number'
                                 inputType='text'
-                                style={getStyles(touched.phone, "password", errors.phone)}
+                                style={getStyles(touched.phone, "phone", errors.phone)}
                                 name='phone'
                                 placeholder='xxx xxx xxx'
                                 smalltext='Enter your phone number with country code'
                                 />
+                            <AiOutlinePhone className='relative top-[-1.5em] left-[90%] md:left-[75%]'/>
+
                                 {errors.phone && touched.phone ? (
                             <p className='text-xs text-error w-[90%] grid justify-left '>{errors.phone}</p>):
                             <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter your valid phone number with country code</p>

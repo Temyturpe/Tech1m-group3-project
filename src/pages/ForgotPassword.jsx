@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import { useState } from 'react';
 import arrow from '../assets/icons/refresh-2.svg' 
-
+import { AiOutlineMail } from "react-icons/ai";
 
 const ForgotPassword = () => {
      const [error,setError]=useState('')
@@ -44,6 +44,8 @@ const ForgotPassword = () => {
                         setSuccess('An email with password reset link will be sent to your registered email address')
                       } catch{
                         setError('User does not exist')
+                        setTimeout(()=>{
+                          setError('')}, 3000)
                     }
                     console.log(values)
                }}
@@ -70,6 +72,7 @@ const ForgotPassword = () => {
                             placeholder='Adams@gmail.com'
                             smalltext='Enter your valid email'
                         />
+                        <AiOutlineMail className='relative top-[-1.5em] left-[45%] md:left-[40%]'color='blue'/>
                         {errors.email && touched.email ? (
                             <p className='text-xs text-error w-[90%] grid justify-left '>{errors.email}</p>):
                             <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter your valid email</p>

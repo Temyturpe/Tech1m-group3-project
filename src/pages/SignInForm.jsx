@@ -1,6 +1,8 @@
 import React from 'react'
 import '../assets/css/global.css'
 import { Field } from 'formik';
+import { CiSearch } from "react-icons/ci";
+
 
 const SignInForm = (props) => {
   return (
@@ -10,6 +12,7 @@ const SignInForm = (props) => {
                     <p className='text-primary-200 text-xs'>Details</p>
                 </div>
                 <Field style={props.style} type={props.inputType} placeholder={props.placeholder} ref={props.ref} name={props.name} className='bg-white-20 w-full text-primary-200 text-sm px-4 py-1.5'/>
+                
                 
     </div>
   )
