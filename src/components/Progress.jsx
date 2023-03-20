@@ -6,6 +6,7 @@ import Student4 from '../assets/images/avatars/student4.jpg'
 import Student5 from '../assets/images/avatars/student5.jpg'
 import Student6 from '../assets/images/avatars/student6.jpg'
 import More from '../assets/icons/more.svg'
+import { Link } from 'react-router-dom'
 
 
 const Progress = () => {
@@ -100,7 +101,9 @@ const Progress = () => {
                 </li>
             </ul>
         </div>
-        <button className='text-primary-100 text-base mt-4 flex gap-2 justify-center items-center py-2 w-full border-solid border-[.5px] rounded-md border-primary-100'><img src={More} alt="" className='w-8 flex items-center justify-center' /> <span>View All</span></button>
+        <Link to='/in/students'>
+          <button className='text-primary-100 text-base mt-4 flex gap-2 justify-center items-center py-2 w-full border-solid border-[.5px] rounded-md border-primary-100'><img src={More} alt="" className='w-8 flex items-center justify-center' /> <span>View All</span></button>
+        </Link>
 
     </div>
   )

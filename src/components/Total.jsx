@@ -1,5 +1,6 @@
 import React from 'react'
 import More from '../assets/icons/more.svg'
+import {Link} from 'react-router-dom'
 
 const Total = () => {
   return (
@@ -7,25 +8,36 @@ const Total = () => {
         <div className="top">
           <ul className="courses flex flex-col gap-4">
             <li className='flex justify-between items-center shadow-md rounded-md px-3 py-5'>
-            <div className="left">
-              <div className="top text-success">Top Courses</div>
-              <div className="bottom text-primary-500 text-2xl">215</div>
-            </div>
-            <div className="right"><button className='text-primary-100 text-base flex gap-2 justify-center items-center py-1 px-4 border-solid border-[.5px] rounded-md border-primary-100'><img src={More} alt="" className='w-8 flex items-center justify-center' /> <span>View All</span></button></div>
+                <div className="left">
+                  <div className="top text-success">Top Courses</div>
+                  <div className="bottom text-primary-500 text-2xl">215</div>
+               </div>
+               <div className="right">
+               <Link to='/in/courses'>
+                <button className='text-primary-100 text-base flex gap-2 justify-center items-center py-1 px-4      border-solid border-[.5px] rounded-md border-primary-100'>
+                  <img src={More} alt="" className='w-8 flex items-center justify-center' /> 
+                  <span>View All</span>
+               </button>
+                </Link>
+                </div>
             </li>
             <li className='flex justify-between items-center shadow-md rounded-md px-3 py-5 '>
             <div className="left">
               <div className="top text-primary-100">Total Students</div>
               <div className="bottom text-primary-500 text-2xl">1,759</div>
             </div>
-            <div className="right"><button className='text-primary-100 text-base flex gap-2 justify-center items-center py-1 px-4 border-solid border-[.5px] rounded-md border-primary-100'><img src={More} alt="" className='w-8 flex items-center justify-center' /> <span>View All</span></button></div>
+            <div className="right">
+              <Link to='/in/students'><button className='text-primary-100 text-base flex gap-2 justify-center items-center py-1 px-4 border-solid border-[.5px] rounded-md border-primary-100'><img src={More} alt="" className='w-8 flex items-center justify-center' /> <span>View All</span></button>
+              </Link>
+              </div>
             </li>
             <li className='flex justify-between items-center shadow-md rounded-md px-3 py-5 '>
             <div className="left">
               <div className="top text-primary-100">Total Lessons</div>
               <div className="bottom text-primary-500 text-2xl">800</div>
             </div>
-            <div className="right"><button className='text-primary-100 text-base flex gap-2 justify-center items-center py-1 px-4 border-solid border-[.5px] rounded-md border-primary-100'><img src={More} alt="" className='w-8 flex items-center justify-center' /> <span>View All</span></button></div>
+            <div className="right"><Link to='/in/quiz'><button className='text-primary-100 text-base flex gap-2 justify-center items-center py-1 px-4 border-solid border-[.5px] rounded-md border-primary-100'><img src={More} alt="" className='w-8 flex items-center justify-center' /> <span>View All</span></button>
+            </Link></div>
             </li>
           </ul>
         </div>

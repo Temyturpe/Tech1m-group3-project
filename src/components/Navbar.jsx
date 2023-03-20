@@ -37,7 +37,14 @@ const Navbar = () => {
             <div className="chat relative"><img src={Chat} alt="" className='w-5 md:w-6 '/><span className=" absolute -top-2 left-3 px-[4px] md:px-[5px] py-[.5px] md:py-[1px] text-xs bg-green text-white-30  rounded-full">2</span></div>
             <div className="chat relative"><img src={Notification} alt="" className='w-5 md:w-6' /><span className=" absolute -top-2 left-3 px-[4px] md:px-[5px] py-[.5px] md:py-[1px] text-xs bg-red text-white-30 rounded-full">5</span></div>
             <div className="admin flex items-center gap-2"><img src={Admin} alt="" className='w-10 md:w-12 h-10 md:h-12 rounded-full object-cover' /><div className="admin-info leading-[1]"><div className="name text-primary-300">Adam Chuks</div><div className="title text-sm">Supa Admin</div></div></div>
-            <div className="settings ml-2 md:ml-8 "><img src={Setting} alt="" className='w-[26px]' /></div>
+            <div className="settings ml-2 md:ml-8 group"><img src={Setting} alt="" className='w-[26px]' />
+            <div className="logoutbox fixed group-hover:block hidden top-18 rounded-md right-4 px-8 font-semibold py-2 bg-white-30 text-primary-200">
+              <ul className="more flex flex-col gap-3">
+                <li className="options cursor-pointer">Settings</li>
+                <li className="options cursor-pointer"><Link to='/'>Log Out</Link></li>
+              </ul>
+            </div>
+            </div>
             </div>
             {/* menubar */}
             <div
@@ -127,7 +134,9 @@ const Navbar = () => {
             </Link>
               </div>
               <div className="logout mt-10">
-              <button className='flex items-center gap-2 font-semibold bg-[#ffffff] px-5 py-2 border-2 rounded-md shadow-md border-primary-200 text-primary-200'><span><img src={Setting} alt="" /></span><span>Log Out</span></button>
+                <Link to='/'>
+                  <button className='flex items-center gap-2 font-semibold bg-[#ffffff] px-5 py-2 border-2 rounded-md shadow-md border-primary-200 text-primary-200 '><span><img src={Setting} alt="" /></span><span>Log Out</span></button>
+              </Link>
               </div>
           </div>
         </div>
