@@ -1,5 +1,5 @@
 # Tech1m-group3-project (Tech1m Junior)
-Final project for the tech1m frontend development bootcamp program. Tech1m junior is platform where children with passion for tech are taught. This platform gives children access to well selected and explained tech courses that makes lerning fun for them. The platform also allows the instructors to pass information and courses to students. It also allows the instructor to track the progress of the students and view all submitted assignments.
+Final project for the tech1m frontend development bootcamp program. Tech1m junior is platform where children with passion for tech are taught. This platform gives children access to well selected and explained tech courses that makes lerning fun for them. The platform also allows the instructors to pass information and courses to students. It also allows the instructor to track the progress of the students and view all submitted assignments. This project is also mobile responsive.
 
 # Contributors:
 * [Temitope Okesanya](https://github.com/Temyturpe)
