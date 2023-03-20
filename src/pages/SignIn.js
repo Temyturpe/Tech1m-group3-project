@@ -50,9 +50,9 @@ const SignIn = () => {
       }
   return (
 
-        <div className=' h-[100%] md:h-screen w-screen'  style={{backgroundImage: `url(${backgroundImg})`,backgroundSize:'cover', backgroundRepeat:'no-repeat' }}>
-        <div className='bg-dblue-900 bg-opacity-70 h-full flex flex-col  md:flex-row items-center justify-between md:px-20'>
-            <div className='mt-20 md:mt-0'>
+        <div className=' h-screen md:h-screen w-screen'  style={{backgroundImage: `url(${backgroundImg})`,backgroundSize:'cover', backgroundRepeat:'no-repeat' }}>
+        <div className='bg-dblue-900 h-screen bg-opacity-70 md:h-full flex flex-col  md:flex-row items-center justify-center md:px-20'>
+            <div className='mt-5 md:mt-0'>
             <img src={logo} alt="background image" />
             </div>
             <Formik
