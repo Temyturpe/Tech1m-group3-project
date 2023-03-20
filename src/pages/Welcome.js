@@ -9,7 +9,7 @@ import home from '../assets/icons/home-2.svg'
 const Welcome = () => {
   return (
     <div className=' h-screen' style={{backgroundImage: `url(${backgroundImg})`,backgroundSize:'cover'}}>
-      <div className='bg-dblue-900 bg-opacity-70 h-full flex flex-col  md:flex-row items-center justify-between px-20'>
+      <div className='bg-dblue-900 bg-opacity-70 h-full flex flex-col  md:flex-row items-center justify-between px-10 md:px-20'>
         <div className='mt-20 md:mt-0'>
           <img src={logo} alt="background image" />
         </div>
