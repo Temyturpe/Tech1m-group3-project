@@ -8,8 +8,9 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import { useState } from 'react'
-import arrow from '../assets/icons/login.svg' 
+import arrow from '../assets/icons/login.svg'
 import { AiOutlineMail,AiOutlineEye,AiOutlineEyeInvisible} from "react-icons/ai";
+
 
 
 const Login = () => {
@@ -74,8 +75,9 @@ const Login = () => {
                       <img src={logo} alt="backgroundimage"/>
                   </div>
                   <p className='text-red h6'>{error}</p>
-                  
+
                   <div className='w-full m-auto flex flex-col justify-center md:items-center'>
+
 
                     <SignInForm 
                       title='Email Address'
@@ -103,6 +105,7 @@ const Login = () => {
                       smalltext='Enter strong password'
                       />
                       {showPassword?(
+
                                     < AiOutlineEye className='relative top-[-1.5em] left-[90%] md:left-[40%]' color='blue' onClick={()=>setShowPassword(!showPassword)}/>
 
                                 ):< AiOutlineEyeInvisible color='blue' className='relative top-[-1.5em] left-[90%] md:left-[40%]' onClick={()=>setShowPassword(!showPassword)}/>}
