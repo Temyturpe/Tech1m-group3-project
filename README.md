@@ -9,7 +9,7 @@ Final project for the tech1m frontend development bootcamp program. Tech1m junio
 # About the project
 Tools used to create this project:
 * React Js (Javascrip framework)
-* Firebase (for form validation)
+* Firebase (for form authetication)
 * Tailwindcss (Css Library)
 * Chart Js ( for bar-chart)
 * Formik ( for form)
@@ -21,9 +21,9 @@ This website includes 9 pages:
 # page1: (welcome page)
  This page is the welcome page and it asks users if they either want to log in as old users or sign up as new users either as students or instructors.
 # Page2: (login / signup)
- This page content is dependent on which ever button is clicked in the first page. If users choose signup the page show form for signing up, but if users click log in, the page displays a login form.
+ This page content is dependent on which ever button is clicked in the first page. If users choose signup the page show form for signing up, but if users click log in, the page displays a login form. When the user inputs a wrong password or email on the Login page, it displays an error of invalid password/username. The user can then go to the sign up page to create a new account or go to the forgot password page to reset their password. While on the Sign up page, if the user inputs an email that exists on the database, it displays a 'user already exists' error. 
 # Page3: (forgot password)
- This page is for users that need to recover their passwords. after filling the form, a message is sent to the user's registered email for password recovery.
+ This page is for users that need to recover their passwords. after filling the form, a link is sent to the user's registered email for password recovery. An email that does not exist on the database would display an error of 'user does not exist'.
 # Page4: (Home)
  This page is the home where all general details are displayed.
 # Page5: (Course)
