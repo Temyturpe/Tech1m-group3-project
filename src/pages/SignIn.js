@@ -165,8 +165,8 @@ const SignIn = () => {
                             </div>
                             <select name="" id="" className=' items-center bg-white-20 p-1.5 text-primary-200 text-sm px-4 w-full'>
                                 <option value="">Instructor</option>
-                                <option value="">Recruiter</option>
-                                <option value="">student</option>
+                                <option value="">Super Admin</option>
+                                <option value="">Admin</option>
                             </select>
                             <p className='text-xs text-neutral-50'>Select your role</p>
 

@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 import { useAuth } from '../contexts/AuthContext'
 import { useState } from 'react'
 import arrow from '../assets/icons/login.svg' 
-import { AiOutlineMail,AiOutlineEye,AiOutlineEyeInvisible,AiOutlinePhone } from "react-icons/ai";
+import { AiOutlineMail,AiOutlineEye,AiOutlineEyeInvisible} from "react-icons/ai";
 
 
 const Login = () => {
@@ -75,7 +75,7 @@ const Login = () => {
                   </div>
                   <p className='text-red h6'>{error}</p>
                   
-                  <div className='w-full'>
+                  <div className='w-full m-auto flex flex-col justify-center md:items-center'>
 
                     <SignInForm 
                       title='Email Address'
@@ -87,13 +87,13 @@ const Login = () => {
                       style={getStyles(touched.email, "email", errors.email)}
         
                       />
-                      <AiOutlineMail className='relative top-[-1.5em] left-[90%] md:left-[75%]'color='blue'/>
+                      <AiOutlineMail className='relative top-[-1.5em] left-[90%] md:left-[40%]'color='blue'/>
                       {errors.email && touched.email ? (
                         <p className='text-xs text-error w-[90%] grid justify-left '>Please enter the correct email format</p>):
                         <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter your valid email</p>
                       }
                   </div>
-                  <div className='w-full m-auto'>
+                  <div className='w-full m-auto flex flex-col md:items-center'>
                       <SignInForm 
                       title='Password'
                       inputType={showPassword ? "text" : "password"}
@@ -103,9 +103,9 @@ const Login = () => {
                       smalltext='Enter strong password'
                       />
                       {showPassword?(
-                                    < AiOutlineEye className='relative top-[-1.5em] left-[90%] md:left-[75%]' color='blue' onClick={()=>setShowPassword(!showPassword)}/>
+                                    < AiOutlineEye className='relative top-[-1.5em] left-[90%] md:left-[40%]' color='blue' onClick={()=>setShowPassword(!showPassword)}/>
 
-                                ):< AiOutlineEyeInvisible color='blue' className='relative top-[-1.5em] left-[90%] md:left-[75%]' onClick={()=>setShowPassword(!showPassword)}/>}
+                                ):< AiOutlineEyeInvisible color='blue' className='relative top-[-1.5em] left-[90%] md:left-[40%]' onClick={()=>setShowPassword(!showPassword)}/>}
                       {errors.password && touched.password ? (
                         <p className='text-xs text-error w-[90%] grid justify-left '>{errors.password}</p>):
                         <p className='text-xs text-neutral-50 w-[90%] grid justify-left '>Enter strong password</p>
@@ -119,8 +119,8 @@ const Login = () => {
                       </div>
                       <select name="" id="" className=' items-center bg-white-20 p-1.5 text-primary-200 text-sm px-4 w-full'>
                           <option value="">Instructor</option>
-                          <option value="">Recruiter</option>
-                          <option value="">student</option>
+                          <option value="">Super Admin</option>
+                          <option value="">Admin</option>
                       </select>
                       <p className='text-xs text-neutral-50'>Select your role</p>
 

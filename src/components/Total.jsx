@@ -3,7 +3,7 @@ import More from '../assets/icons/more.svg'
 
 const Total = () => {
   return (
-    <div className='flex-1 w-full'>
+    <div className='w-full'>
         <div className="top">
           <ul className="courses flex flex-col gap-4">
             <li className='flex justify-between items-center shadow-md rounded-md px-3 py-5'>

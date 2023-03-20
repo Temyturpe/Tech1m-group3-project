@@ -20,9 +20,9 @@ const paginateBack = () => setCurrentPage(currentPage - 1);
   return (
     <div className='w-full'>
     <div className="content w-full flex">
-        <div className="left w-[20%]"></div>
-        <div className="right w-[80%] flex flex-col justify-center mt-28 mb-5">
-          <div className='flex justify-between my-5 px-14'>
+        <div className="left w-0 sm:w-[20%]"></div>
+        <div className="right w-full sm:w-[80%] flex flex-col justify-center mt-16 sm:mt-28 mb-5">
+          <div className='flex flex-col sm:flex-row  gap-5 justify-between my-5 px-5 md:px-14'>
                 <div className='max-w-fit'>
                   <p className='text-primary-75 text-[16px]'>Home/<span className='text-primary-500 text-[16px]'>Students</span></p>
                 </div> 
@@ -58,24 +58,23 @@ const paginateBack = () => setCurrentPage(currentPage - 1);
                 </div>
           </div>
 <div className="studenttab">
-  
-<div class="relative overflow-x-auto px-14">
+<div class="relative overflow-x-auto px-2 md:px-14">
     <table class="w-full text-base text-left table-auto border-spacing-y-12">
-        <thead class="text-sm  uppercase flex flex-col gap-8 w-[100%]">
+        <thead class="md:text-sm text-[10px] sm:text-xs  uppercase flex flex-col gap-8 w-[100%]">
             <tr className='bg-primary-50 text-primary-100 w-[100%] rounded-t-md flex justify-between'>
-                <th scope="col" class="px-6 py-5 flex-1">
+                <th scope="col" class=" md:px-6 py-3 px-2 md:py-5 flex-1">
                     Name
                 </th>
-                <th scope="col" class="px-6 py-5 flex-1">
+                <th scope="col" class=" md:px-6 py-3 px-2 md:py-5 flex-1">
                     Course
                 </th>
-                <th scope="col" class="px-6 py-5 flex-1">
+                <th scope="col" class=" md:px-6 py-3 px-2 md:py-5 flex-1">
                     Level
                 </th>
-                <th scope="col" class="px-6 py-5 flex-1">
+                <th scope="col" class=" md:px-6 py-3 px-2 md:py-5 flex-1">
                     Guardian Contact
                 </th>
-                <th scope="col" class="px-6 py-5 flex-1">
+                <th scope="col" class=" md:px-6 py-3 px-2 md:py-5 flex-1">
                     School Name
                 </th>
             </tr>

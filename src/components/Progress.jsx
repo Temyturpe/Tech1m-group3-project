@@ -10,7 +10,7 @@ import More from '../assets/icons/more.svg'
 
 const Progress = () => {
   return (
-    <div className='flex-1 w-full p-2 shadow-md rounded-md'>
+    <div className='w-full p-2 shadow-md rounded-md'>
         <div className="title text-primary-500">Student's Progress</div>
         <div className="datas">
             <ul className='w-full px-1 mt-3 text-sm'>

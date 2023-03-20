@@ -18,11 +18,11 @@ const paginateFront = () => setCurrentPage(currentPage + 1);
 const paginateBack = () => setCurrentPage(currentPage - 1);
 
   return (
-    <div className='w-full mt-20'>
+    <div className='w-full mt-16 md:mt-20'>
         <div className="content w-full flex">
-            <div className="left w-[20%]"></div>
-            <div className="right w-[80%] flex flex-col justify-center mt-8 ">
-              <div className='flex justify-between my-5 px-14'>
+            <div className="left w-0  sm:w-[20%]"></div>
+            <div className="right w-full sm:w-[80%] flex flex-col justify-center mt-8 ">
+              <div className='flex justify-between flex-col sm:flex-row gap-5 my-5 px-5 md:px-14'>
                 <div className='max-w-fit'>
                   <p className='text-primary-75 text-[16px]'>Home/<span className='text-primary-500 text-[16px]'>Courses</span></p>
                 </div> 
@@ -57,6 +57,7 @@ const paginateBack = () => setCurrentPage(currentPage - 1);
                   </div>
                 </div>
               </div>
+              <div className="coursee flex flex-col justify-center items-center">
               <div >
                    <Courses course={currentPosts}/>
               </div>
@@ -67,7 +68,7 @@ const paginateBack = () => setCurrentPage(currentPage - 1);
                 paginateFront={paginateFront}
                 currentPage={currentPage}
             />
-
+</div>
             </div>
         </div>
     </div>

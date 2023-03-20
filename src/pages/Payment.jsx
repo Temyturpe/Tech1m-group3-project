@@ -20,9 +20,9 @@ const paginateBack = () => setCurrentPage(currentPage - 1);
   return (
     <div className='w-full mt-24'>
     <div className="content w-full flex">
-        <div className="left w-[20%]"></div>
-        <div className="right w-[80%] px-14">
-              <div className='flex justify-between items-center my-5 '>
+        <div className="left w-0 sm:w-[20%]"></div>
+        <div className="right w-full sm:w-[80%] px-5 md:px-14">
+              <div className='flex flex-col sm:flex-row gap-5 justify-between my-5 '>
                 <div className='max-w-fit'>
                   <p className='text-primary-75 text-[16px]'>Home/<span className='text-primary-500 text-[16px]'>Payments</span></p>
                 </div> 
