@@ -14,16 +14,16 @@ const Messages = () => {
   return (
     <div className='w-full'>
         <div className="content w-full flex">
-            <div className="left w-0 md:w-[20%]"></div>
-            <div className="right w-full md:w-[80%] mt-28 p-6">
+            <div className="left w-0 sm:w-[20%]"></div>
+            <div className="right w-full sm:w-[80%] mt-20 md:mt-28 p-6">
               <div className='w-[100%]'>
-                <div className='bg-primary-300 flex items-center h-[122px] w-full text-primary-50 shadow-md p-4 rounded-md'>
+                <div className='bg-primary-300 flex mb-5 items-center h-[122px] w-full text-primary-50 shadow-md p-4 rounded-md'>
                   <h1 className='text-[24px] font-[400px]'>Messages</h1>
                 </div>
-                <div className='flex flex-col md:flex-row'>
+                <div className='flex flex-col gap-5 md:flex-row'>
                   <div className='w-full md:w-[48%]'>
-                    <div className='shadow-md rounded-lg w-full md:w-[70%] mt-[18px] py-4 px-6'>
-                      <div className='flex  justify-between  items-center'>
+                    <div className='shadow-md rounded-lg w-full md:w-[70%] mt-[18px] mb-5 py-4 px-6'>
+                      <div className='flex  justify-between items-center'>
                         <p className='text-primary-300 text-base w-[50%]'>All messages<span className='text-500 block font-bold text-2xl'>24</span></p>
                         <button className='flex border border-primary-300 rounded items-center p-[10px] md:-[6px]'><img src={More} className='mr-2 md:mr-1' alt='more' /><span className='text-xs md:text-sm text-primary-100'>Mark all as read</span></button>
                       </div>
